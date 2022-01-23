@@ -1,0 +1,13 @@
+# Import cache
+.import/
+
+# Binaries
+bin/
+build/
+lib/
+
+# Binary imported translations generated from CSV files
+*.translation
+
+# Addons that are not required to build game
+addons/godot-git-plugin 
