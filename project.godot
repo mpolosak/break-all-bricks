@@ -21,8 +21,8 @@ _global_script_class_icons={
 [application]
 
 config/name="break all bricks"
-run/main_scene="res://board.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://scenes/board.tscn"
+config/icon="res://assets/icon.png"
 
 [gdnative]
 
