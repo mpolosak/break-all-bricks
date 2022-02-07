@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/blocks.png" type="Texture" id=1]
 [ext_resource path="res://scenes/paddle.tscn" type="PackedScene" id=2]
@@ -102,6 +102,9 @@ points = PoolVector2Array( 64, 16, 0, 16, 0, 0, 64, 0 )
 } ]
 3/z_index = 0
 
+[sub_resource type="PhysicsMaterial" id=6]
+bounce = 1.0
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -116,3 +119,9 @@ position = Vector2( 129, 508 )
 
 [node name="Ball" parent="." instance=ExtResource( 3 )]
 position = Vector2( 145, 305 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource( 6 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -1, -1, 1025, -1, 1025, 600, 1024, 600, 1024, 0, 0, 0, 0, 600, -1, 600 )
