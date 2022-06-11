@@ -23,9 +23,8 @@ polygon = PoolVector2Array( -1, -1, 1025, -1, 1025, 600, 1024, 600, 1024, 0, 0, 
 
 [node name="Brick" parent="." instance=ExtResource( 4 )]
 position = Vector2( 199, 143 )
+type = 3
 
 [node name="Brick2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 199, 159 )
-type = 2
-
-[connection signal="body_shape_exited" from="Ball" to="Ball" method="_on_Ball_body_shape_exited"]
+type = 1

@@ -1,11 +1,11 @@
 tool
 extends StaticBody2D
 
-enum Type{Red, Blue, Green, Yellow}
+class_name Brick
+
+enum Type{Red=1, Blue, Green, Yellow}
 export(Type) var type setget set_type
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var pounding_level = 0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -15,7 +15,11 @@ func _ready():
 func set_type(new_type):
 	type=new_type
 	var sprite: Sprite = get_node('Sprite')
-	sprite.set_region_rect(Rect2(0,16*type,64,16))
+	sprite.set_region_rect(Rect2(0,16*(type-1),64,16))
+
+func hit():
+	pounding_level+=1
+	return pounding_level == type
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

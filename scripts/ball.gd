@@ -17,10 +17,6 @@ func _ready():
 
 
 func _on_Ball_body_exited(body):
-	pass
-
-
-func _on_Ball_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
-	pass
-#	if(body is TileMap):
-#		print_debug(body.shape_owner_get_owner(body_shape_index))
+	if body is Brick:
+		if body.hit():
+			body.queue_free()
