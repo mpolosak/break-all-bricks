@@ -1,6 +1,8 @@
-extends RigidBody2D
+tool
+extends StaticBody2D
 
-
+enum Type{Red, Blue, Green, Yellow}
+export(Type) var type setget set_type
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -10,17 +12,11 @@ extends RigidBody2D
 func _ready():
 	pass # Replace with function body.
 
+func set_type(new_type):
+	type=new_type
+	var sprite: Sprite = get_node('Sprite')
+	sprite.set_region_rect(Rect2(0,16*type,64,16))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_Ball_body_exited(body):
-	pass
-
-
-func _on_Ball_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
-	pass
-#	if(body is TileMap):
-#		print_debug(body.shape_owner_get_owner(body_shape_index))
