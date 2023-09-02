@@ -10,16 +10,17 @@ bounce = 1.0
 [node name="Node2D" type="Node2D"]
 
 [node name="Paddle" parent="." instance=ExtResource("2")]
-position = Vector2(129, 508)
+position = Vector2(213, 495)
 
 [node name="Ball" parent="." instance=ExtResource("3")]
-position = Vector2(179, 317)
+position = Vector2(269, 210)
 
 [node name="Border" type="StaticBody2D" parent="."]
 physics_material_override = SubResource("6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Border"]
-polygon = PackedVector2Array(-1, -1, 1025, -1, 1025, 600, 1024, 600, 1024, 0, 0, 0, 0, 600, -1, 600)
+build_mode = 1
+polygon = PackedVector2Array(0, 800, 0, 0, 1280, 0, 1280, 800)
 
 [node name="Brick" parent="." instance=ExtResource("4")]
 position = Vector2(199, 143)
