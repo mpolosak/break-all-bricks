@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dubgmgpx846pu"]
 
 [ext_resource type="PackedScene" uid="uid://dyef8myie07tn" path="res://scenes/paddle.tscn" id="2"]
-[ext_resource type="PackedScene" path="res://scenes/ball.tscn" id="3"]
-[ext_resource type="PackedScene" path="res://scenes/brick.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://c61b3jwwpoj0v" path="res://scenes/ball.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://pyebm6rxmbt3" path="res://scenes/brick.tscn" id="4"]
 
 [sub_resource type="PhysicsMaterial" id="6"]
 bounce = 1.0
