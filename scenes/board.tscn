@@ -1,30 +1,30 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://dubgmgpx846pu"]
 
-[ext_resource path="res://scenes/paddle.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/ball.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/brick.tscn" type="PackedScene" id=4]
+[ext_resource type="PackedScene" path="res://scenes/paddle.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/ball.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/brick.tscn" id="4"]
 
-[sub_resource type="PhysicsMaterial" id=6]
+[sub_resource type="PhysicsMaterial" id="6"]
 bounce = 1.0
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Paddle" parent="." instance=ExtResource( 2 )]
-position = Vector2( 129, 508 )
+[node name="Paddle" parent="." instance=ExtResource("2")]
+position = Vector2(129, 508)
 
-[node name="Ball" parent="." instance=ExtResource( 3 )]
-position = Vector2( 145, 305 )
+[node name="Ball" parent="." instance=ExtResource("3")]
+position = Vector2(132, 301)
 
 [node name="Border" type="StaticBody2D" parent="."]
-physics_material_override = SubResource( 6 )
+physics_material_override = SubResource("6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Border"]
-polygon = PoolVector2Array( -1, -1, 1025, -1, 1025, 600, 1024, 600, 1024, 0, 0, 0, 0, 600, -1, 600 )
+polygon = PackedVector2Array(-1, -1, 1025, -1, 1025, 600, 1024, 600, 1024, 0, 0, 0, 0, 600, -1, 600)
 
-[node name="Brick" parent="." instance=ExtResource( 4 )]
-position = Vector2( 199, 143 )
+[node name="Brick" parent="." instance=ExtResource("4")]
+position = Vector2(199, 143)
 type = 3
 
-[node name="Brick2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 199, 159 )
+[node name="Brick2" parent="." instance=ExtResource("4")]
+position = Vector2(199, 159)
 type = 1

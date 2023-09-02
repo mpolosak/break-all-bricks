@@ -1,10 +1,10 @@
-tool
+@tool
 extends StaticBody2D
 
 class_name Brick
 
 enum Type{Red=1, Blue, Green, Yellow}
-export(Type) var type setget set_type
+@export var type: Type: set = set_type
 var pounding_level = 0
 
 
@@ -14,7 +14,7 @@ func _ready():
 
 func set_type(new_type):
 	type=new_type
-	var sprite: Sprite = get_node('Sprite')
+	var sprite: Sprite2D = get_node('Sprite2D')
 	sprite.set_region_rect(Rect2(0,16*(type-1),64,16))
 
 func hit():

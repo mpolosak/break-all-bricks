@@ -11,3 +11,5 @@ lib/
 
 # Addons that are not required to build game
 addons/godot-git-plugin 
+
+.godot
