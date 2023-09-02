@@ -1,8 +1,6 @@
 extends CharacterBody2D
 
-@export (int) var speed = 200
-
-var velocity = Vector2()
+@export var speed: int = 200
 
 func get_input():
 	velocity = Vector2()

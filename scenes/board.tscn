@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dubgmgpx846pu"]
 
-[ext_resource type="PackedScene" path="res://scenes/paddle.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://dyef8myie07tn" path="res://scenes/paddle.tscn" id="2"]
 [ext_resource type="PackedScene" path="res://scenes/ball.tscn" id="3"]
 [ext_resource type="PackedScene" path="res://scenes/brick.tscn" id="4"]
 
@@ -13,7 +13,7 @@ bounce = 1.0
 position = Vector2(129, 508)
 
 [node name="Ball" parent="." instance=ExtResource("3")]
-position = Vector2(132, 301)
+position = Vector2(179, 317)
 
 [node name="Border" type="StaticBody2D" parent="."]
 physics_material_override = SubResource("6")
