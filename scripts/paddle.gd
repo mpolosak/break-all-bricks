@@ -12,6 +12,4 @@ func get_input():
 
 func _physics_process(_delta):
 	get_input()
-	set_velocity(velocity)
 	move_and_slide()
-	velocity = velocity

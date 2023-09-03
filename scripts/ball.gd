@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends CharacterBody2D
 
 
 # Declare member variables here. Examples:
@@ -8,15 +8,17 @@ extends RigidBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	velocity = Vector2(-100, -700)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_Ball_body_exited(body):
-	if body is Brick:
-		if body.hit():
-			body.queue_free()
+func _physics_process(delta):
+	var collision = move_and_collide(velocity * delta)
+	if collision:
+		velocity = velocity.bounce(collision.get_normal())
+		var collider = collision.get_collider()
+		if collider is Brick:
+			if collider.hit():
+				collider.queue_free()
